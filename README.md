@@ -1,4 +1,4 @@
-# Unmount Image
+# Unmount Image Action
 An action that unmounts an image's `boot` and `root` partitions inside a Ubuntu runner, ideally created by the [damianperera/mount-image-action@v1](https://github.com/damianperera/mount-image-action) action.
 
 # Example
