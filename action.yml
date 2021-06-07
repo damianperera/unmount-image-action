@@ -1,5 +1,5 @@
 name: Unmount Image
-description: An action that unmount an image's boot and root partitions inside a Ubuntu runner.
+description: An action that unmounts an image's boot and root partitions inside a Ubuntu runner.
 author: Damian Perera
 branding:
   icon: download
