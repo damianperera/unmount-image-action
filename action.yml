@@ -1,5 +1,9 @@
-name: 'Unmount an image'
-description: 'A custom action to umount an image mounted by damianperera/mount-image-action inside a GitHub Actions workflow'
+name: Unmount Image
+description: An action that unmount an image's boot and root partitions inside a Ubuntu runner.
+author: Damian Perera
+branding:
+  icon: download
+  color: red
 inputs:
   imagePath:
     description: 'Absolute path of the image'
