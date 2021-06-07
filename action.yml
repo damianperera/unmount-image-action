@@ -1,0 +1,22 @@
+name: 'Unmount an image'
+description: 'A custom action to umount an image mounted by damianperera/mount-image-action inside a GitHub Actions workflow'
+inputs:
+  imagePath:
+    description: 'Absolute path of the image'
+    required: true
+  bootDeviceMapper:
+    description: 'bootDeviceMapper output of damianperera/mount-image-action'
+    required: true
+  rootDeviceMapper:
+    description: 'rootDeviceMapper output of damianperera/mount-image-action'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - id: unmount-image
+      shell: bash
+      run: |
+       echo Attempting to unmount ${{ inputs.imagePath }}
+       sudo umount ${{ inputs.bootDeviceMapper }} || echo 1>&2 "ERROR: could not unmount ${{ inputs.bootDeviceMapper }}"
+       sudo umount ${{ inputs.rootDeviceMapper }} || echo 1>&2 "ERROR: could not unmount ${{ inputs.inputs.rootDeviceMapper }}"
+       sudo kpartx -dvs ${{ inputs.imagePath }} || echo 1>&2 "ERROR: could not unmount ${{ inputs.inputs.imagePath }}"
