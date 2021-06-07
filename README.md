@@ -3,10 +3,10 @@ An action that unmounts an image's `boot` and `root` partitions inside a Ubuntu 
 
 # Example
 ```
-- name: Unmount OpenWrt image
+- name: Unmount Image
   uses: damianperera/unmount-image-action@v1
   with:
-    imagePath: /home/github-runner/raspberryPi.img
+    imagePath: /home/github-runner/rpi4.img
     bootDeviceMapper: /dev/mapper/loop5p0
     rootDeviceMapper: /dev/mapper/loop5p1
 ```
